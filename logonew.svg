@@ -1,0 +1,282 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="65%" fx="50%" fy="35%">
+      <stop offset="0%" stop-color="#fdf3d0" />
+      <stop offset="40%" stop-color="#e2c488" />
+      <stop offset="80%" stop-color="#b6914b" />
+      <stop offset="100%" stop-color="#806227" />
+    </radialGradient>
+
+    <!-- Gold Gradients -->
+    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF4CC" />
+      <stop offset="25%" stop-color="#EED48F" />
+      <stop offset="50%" stop-color="#C59B47" />
+      <stop offset="75%" stop-color="#EAD796" />
+      <stop offset="100%" stop-color="#9E742C" />
+    </linearGradient>
+
+    <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#E9D188" />
+      <stop offset="100%" stop-color="#9C732A" />
+    </linearGradient>
+
+    <!-- Dark Crown Body Gradient -->
+    <linearGradient id="darkCrown" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2A2215" />
+      <stop offset="50%" stop-color="#14100A" />
+      <stop offset="100%" stop-color="#0A0704" />
+    </linearGradient>
+
+    <!-- Drop Shadow for Crown & Text -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#3d2a09" flood-opacity="0.6"/>
+    </filter>
+    
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Star Symbol -->
+    <g id="star">
+      <path d="M0,-8 L2.2,-2.2 L8,0 L2.2,2.2 L0,8 L-2.2,2.2 L-8,0 L-2.2,-2.2 Z" fill="url(#goldLight)" />
+    </g>
+
+    <!-- Crescent Symbol -->
+    <g id="crescent">
+      <path d="M0,-5 A4,4 0 0,1 0,5 A5.5,5.5 0 0,0 0,-5" fill="url(#goldLight)" />
+    </g>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="700" fill="url(#bgGrad)" />
+
+  <!-- Ambient Light / Vignette Glow behind Crown -->
+  <circle cx="500" cy="270" r="220" fill="#fff5d1" opacity="0.3" filter="url(#glow)" />
+
+  <!-- ==================== CROWN SECTION ==================== -->
+  <g transform="translate(0, 40)" filter="url(#shadow)">
+    
+    <!-- Crown Base Shadow/Outline Back -->
+    <path d="M 320,295 C 370,320 630,320 680,295 L 670,270 C 620,295 380,295 330,270 Z" fill="#684a1a" />
+
+    <!-- Main Crown Dark Body Structure -->
+    <path d="M 335,275 
+             C 330,225 350,195 375,185
+             C 395,177 420,205 440,170
+             C 455,145 475,100 500,95
+             C 525,100 545,145 560,170
+             C 580,205 605,177 625,185
+             C 650,195 670,225 665,275
+             C 610,310 390,310 335,275 Z" 
+          fill="url(#darkCrown)" stroke="url(#goldLinear)" stroke-width="4" stroke-linejoin="round" />
+
+    <!-- Inner Filigree / Ornaments (Gold lines & shapes inside the dark body) -->
+    <g fill="none" stroke="url(#goldLinear)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Left Wing Filigree -->
+      <path d="M 375,265 C 360,240 370,200 395,190 C 405,186 420,210 435,195 C 445,185 435,165 420,175" />
+      <path d="M 390,220 C 405,225 415,245 405,260" />
+      <path d="M 350,260 C 370,250 380,270 365,285" />
+      
+      <!-- Right Wing Filigree -->
+      <path d="M 625,265 C 640,240 630,200 605,190 C 595,186 580,210 565,195 C 555,185 565,165 580,175" />
+      <path d="M 610,220 C 595,225 585,245 595,260" />
+      <path d="M 650,260 C 630,250 620,270 635,285" />
+
+      <!-- Center Filigree Swirls -->
+      <path d="M 450,250 C 465,230 485,230 500,245 C 515,230 535,230 550,250" />
+      <path d="M 460,265 C 475,250 490,255 500,270 C 510,255 525,250 540,265" />
+      
+      <path d="M 465,190 C 480,210 490,195 500,175 C 510,195 520,210 535,190" />
+      <path d="M 445,210 C 465,220 480,200 485,185" />
+      <path d="M 555,210 C 535,220 520,200 515,185" />
+    </g>
+
+    <!-- Jewels / Diamonds on Crown Body -->
+    <g stroke="url(#goldLinear)" stroke-width="1.5">
+      <!-- Center Diamond -->
+      <polygon points="500,218 508,228 500,238 492,228" fill="#eef6fc" />
+      <polygon points="500,221 505,228 500,235 495,228" fill="#5890cc" />
+      
+      <!-- Side Gems -->
+      <polygon points="435,232 441,239 435,246 429,239" fill="#2d6bb5" />
+      <polygon points="565,232 571,239 565,246 559,239" fill="#2d6bb5" />
+
+      <polygon points="410,255 415,260 410,265 405,260" fill="#d0e4f7" />
+      <polygon points="590,255 595,260 590,265 585,260" fill="#d0e4f7" />
+    </g>
+
+    <!-- Lower Band of Crown (Curved banded structure with stars & moons) -->
+    <path d="M 335,275 C 385,305 615,305 665,275 C 620,315 380,315 335,275 Z" fill="url(#goldLinear)" />
+    <path d="M 342,283 C 388,311 612,311 658,283 C 615,319 385,319 342,283 Z" fill="#14100A" stroke="url(#goldLinear)" stroke-width="1.5" />
+
+    <!-- Patterns on Lower Band (Stars and Crescents Alternating) -->
+    <g transform="translate(0, 296) scale(0.75)">
+      <use href="#star" x="480" y="0" />
+      <use href="#crescent" x="525" y="0" />
+      <use href="#star" x="570" y="0" />
+      <use href="#crescent" x="615" y="0" />
+      <use href="#star" x="660" y="0" />
+      <use href="#crescent" x="705" y="0" />
+      
+      <use href="#star" x="435" y="0" />
+      <use href="#crescent" x="390" y="0" />
+      <use href="#star" x="345" y="0" />
+      <use href="#crescent" x="300" y="0" />
+      <use href="#star" x="255" y="0" />
+    </g>
+    
+    <!-- Center Band Jewel -->
+    <g transform="translate(500, 296)">
+      <polygon points="0,-7 6,0 0,7 -6,0" fill="#fff" stroke="url(#goldLinear)" stroke-width="1.5" />
+      <polygon points="0,-4 3,0 0,4 -3,0" fill="#4a88c7" />
+    </g>
+
+    <!-- Very Bottom Rim Line -->
+    <path d="M 355,312 C 400,332 600,332 645,312" fill="none" stroke="url(#goldLinear)" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Top Crown Rim / Golden Cap Accents -->
+    <!-- Center Peak Star -->
+    <g transform="translate(500, 85)">
+      <!-- Glow behind star -->
+      <circle cx="0" cy="0" r="18" fill="#ffea9f" opacity="0.6" filter="url(#glow)" />
+      <!-- Star shape -->
+      <path d="M0,-22 L5.5,-5.5 L22,0 L5.5,5.5 L0,22 L-5.5,5.5 L-22,0 L-5.5,-5.5 Z" fill="url(#goldLight)" stroke="#fff" stroke-width="1" />
+      <!-- Sparkle rays -->
+      <path d="M0,-28 L0,28 M-28,0 L28,0" stroke="#fff" stroke-width="1.5" opacity="0.8" />
+    </g>
+
+    <!-- Left & Right Peak Ornaments -->
+    <circle cx="375" cy="180" r="5" fill="url(#goldLight)" stroke="#523d18" stroke-width="1.5" />
+    <circle cx="625" cy="180" r="5" fill="url(#goldLight)" stroke="#523d18" stroke-width="1.5" />
+    <circle cx="440" cy="165" r="4" fill="url(#goldLight)" stroke="#523d18" stroke-width="1.5" />
+    <circle cx="560" cy="165" r="4" fill="url(#goldLight)" stroke="#523d18" stroke-width="1.5" />
+  </g>
+
+  <!-- ==================== SPARKLES & MAGIC DUST ==================== -->
+  <g opacity="0.85">
+    <!-- Starburst right of crown -->
+    <g transform="translate(660, 210) scale(0.6)">
+      <path d="M0,-15 L4,-4 L15,0 L4,4 L0,15 L-4,4 L-15,0 L-4,-4 Z" fill="#fff" />
+      <circle cx="0" cy="0" r="12" fill="#ffea9f" filter="url(#glow)" />
+    </g>
+    <!-- Starburst left of crown -->
+    <g transform="translate(330, 240) scale(0.4)">
+      <path d="M0,-15 L4,-4 L15,0 L4,4 L0,15 L-4,4 L-15,0 L-4,-4 Z" fill="#fff" />
+    </g>
+    <!-- Upper right sparkles -->
+    <use href="#star" x="620" y="110" transform="scale(0.7)" />
+    <use href="#star" x="730" y="170" transform="scale(0.5)" />
+    <use href="#star" x="530" y="50" transform="scale(0.4)" />
+    <use href="#star" x="780" y="270" transform="scale(0.6)" />
+    <use href="#star" x="450" y="70" transform="scale(0.5)" />
+    <!-- Lower right sparkle -->
+    <g transform="translate(915, 620)">
+      <path d="M0,-18 L4.5,-4.5 L18,0 L4.5,4.5 L0,18 L-4.5,4.5 L-18,0 L-4.5,-4.5 Z" fill="url(#goldLight)" />
+      <circle cx="0" cy="0" r="10" fill="#fff" filter="url(#glow)" />
+    </g>
+  </g>
+
+  <!-- Flowing golden light sweep / trail behind crown -->
+  <path d="M 330,290 C 390,340 500,320 620,250" fill="none" stroke="url(#goldLight)" stroke-width="2" opacity="0.4" filter="url(#glow)" />
+
+
+  <!-- ==================== TYPOGRAPHY SECTION (BLACK FONT) ==================== -->
+  
+  <!-- Main Title: ASTROCELEBRITY in Solid Black -->
+  <g filter="url(#shadow)">
+    <text x="500" y="475" 
+          font-family="Georgia, 'Times New Roman', serif" 
+          font-size="52" 
+          font-weight="bold" 
+          letter-spacing="8" 
+          text-anchor="middle" 
+          fill="#111111"
+          stroke="#000000"
+          stroke-width="0.5">
+      ASTROCELEBRITY
+    </text>
+  </g>
+
+  <!-- Sparkle on the right of ASTROCELEBRITY -->
+  <g transform="translate(790, 455)">
+    <path d="M0,-14 L3.8,-3.8 L14,0 L3.8,3.8 L0,14 L-3.8,3.8 L-14,0 L-3.8,-3.8 Z" fill="url(#goldLight)" />
+    <circle cx="0" cy="0" r="8" fill="#fff" filter="url(#glow)" />
+  </g>
+
+  <!-- Subtitle Divider / Ornament Line -->
+  <g transform="translate(500, 505)" fill="#111111">
+    <line x1="-240" y1="0" x2="-15" y2="0" stroke="#111111" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="15" y1="0" x2="240" y2="0" stroke="#111111" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    
+    <!-- Diamond bullet in center -->
+    <polygon points="0,-4 4,0 0,4 -4,0" />
+  </g>
+
+  <!-- Subtitle: COSMIC FAME • CELESTIAL STYLE in Solid Black -->
+  <g filter="url(#shadow)">
+    <text x="500" y="535" 
+          font-family="Georgia, 'Times New Roman', serif" 
+          font-size="18" 
+          font-weight="600" 
+          letter-spacing="5" 
+          text-anchor="middle" 
+          fill="#111111"
+          opacity="0.95">
+      COSMIC FAME &nbsp;&bull;&nbsp; CELESTIAL STYLE
+    </text>
+  </g>
+
+  <!-- ==================== FLOATING PETALS ==================== -->
+  <g opacity="0.9">
+    <defs>
+      <linearGradient id="petal1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffdfd0" />
+        <stop offset="50%" stop-color="#e8a891" />
+        <stop offset="100%" stop-color="#bd735e" />
+      </linearGradient>
+      <linearGradient id="petal2" x1="100%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#fce4d6" />
+        <stop offset="60%" stop-color="#df9a85" />
+        <stop offset="100%" stop-color="#a8624d" />
+      </linearGradient>
+    </defs>
+
+    <!-- Top Center Petal -->
+    <path d="M 620,15 C 640,5 660,15 655,35 C 650,50 630,55 615,40 C 605,30 610,20 620,15 Z" fill="url(#petal1)" transform="rotate(-15 635 30)" filter="url(#shadow)" />
+
+    <!-- Top Right Petals -->
+    <path d="M 930,35 C 950,25 965,40 955,60 C 945,75 925,70 920,55 C 915,45 920,40 930,35 Z" fill="url(#petal2)" transform="rotate(25 940 50)" filter="url(#shadow)" />
+    
+    <path d="M 720,135 C 750,120 765,145 750,170 C 735,190 710,185 700,160 C 690,140 705,145 720,135 Z" fill="url(#petal1)" transform="rotate(45 725 155)" filter="url(#shadow)" />
+
+    <!-- Upper Right Edge Petal -->
+    <path d="M 830,330 C 855,315 870,340 855,365 C 840,385 815,380 805,355 C 795,335 810,340 830,330 Z" fill="url(#petal2)" transform="rotate(-20 835 350)" filter="url(#shadow)" />
+
+    <!-- Far Right Edge Petal -->
+    <path d="M 870,185 C 885,175 900,190 895,210 C 890,225 870,225 860,210 C 855,200 860,190 870,185 Z" fill="url(#petal1)" transform="rotate(15 875 200)" filter="url(#shadow)" />
+
+    <!-- Left Side Petals -->
+    <path d="M 270,390 C 290,380 305,400 295,420 C 285,435 265,430 255,415 C 250,400 260,395 270,390 Z" fill="url(#petal2)" transform="rotate(-40 275 410)" filter="url(#shadow)" />
+
+    <path d="M 120,490 C 145,475 160,500 145,525 C 130,545 105,540 95,515 C 85,495 100,500 120,490 Z" fill="url(#petal1)" transform="rotate(30 125 515)" filter="url(#shadow)" />
+
+    <path d="M 230,860 C 255,845 275,865 265,890 C 255,910 230,915 215,895 C 205,880 215,870 230,860 Z" fill="url(#petal2)" transform="rotate(10 240 880)" filter="url(#shadow)" />
+    
+    <!-- Lower Left Petal -->
+    <path d="M 230,855 C 250,845 265,865 255,885 C 245,900 220,900 210,880 C 200,860 215,865 230,855 Z" fill="url(#petal1)" transform="translate(-10, -350) rotate(15 235 870)" filter="url(#shadow)" />
+
+    <path d="M 105,660 C 130,645 145,670 135,695 C 125,715 100,710 90,685 C 80,665 95,670 105,660 Z" fill="url(#petal2)" transform="translate(0, -100) rotate(-25 115 680)" filter="url(#shadow)" />
+
+    <!-- Scattered small petal fragments -->
+    <ellipse cx="280" cy="380" rx="6" ry="4" fill="url(#petal1)" transform="rotate(35 280 380)" />
+    <ellipse cx="710" cy="80" rx="5" ry="3" fill="url(#petal2)" transform="rotate(-50 710 80)" />
+    <ellipse cx="880" cy="115" rx="4" ry="2" fill="url(#petal1)" transform="rotate(10 880 115)" />
+    <ellipse cx="160" cy="360" rx="7" ry="4" fill="url(#petal2)" transform="rotate(65 160 360)" filter="url(#shadow)" />
+    <ellipse cx="38" cy="580" rx="5" ry="3" fill="url(#petal1)" transform="rotate(-15 38 580)" />
+  </g>
+
+</svg>
