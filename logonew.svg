@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient Matching the Header -->
+    <!-- Background Gradient Matching Header -->
     <linearGradient id="headerBg" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#fdf3d0" />
       <stop offset="50%" stop-color="#faecc5" />
       <stop offset="100%" stop-color="#f5e1b4" />
     </linearGradient>
 
-    <!-- Gold Gradients -->
+    <!-- Rich Golden Gradients for Crown -->
     <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFF4CC" />
       <stop offset="25%" stop-color="#EED48F" />
@@ -22,16 +22,16 @@
       <stop offset="100%" stop-color="#9C732A" />
     </linearGradient>
 
-    <!-- Dark Crown Body Gradient -->
-    <linearGradient id="darkCrown" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2A2215" />
-      <stop offset="50%" stop-color="#14100A" />
-      <stop offset="100%" stop-color="#0A0704" />
+    <linearGradient id="goldenBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCEAB7" />
+      <stop offset="40%" stop-color="#D4AF37" />
+      <stop offset="80%" stop-color="#9A7B26" />
+      <stop offset="100%" stop-color="#6E5317" />
     </linearGradient>
 
     <!-- Drop Shadow for Depth -->
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#3d2a09" flood-opacity="0.4"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#3d2a09" flood-opacity="0.3"/>
     </filter>
     
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
@@ -55,12 +55,12 @@
 
   <!-- ==================== HORIZONTAL LOGO LAYOUT ==================== -->
   
-  <!-- LEFT: Compact Crown Emblem -->
-  <g transform="translate(10, -15) scale(0.52)" filter="url(#shadow)">
+  <!-- LEFT: Golden Crown Emblem (Shifted further left to create generous space) -->
+  <g transform="translate(45, 8) scale(0.48)" filter="url(#shadow)">
     <!-- Crown Base Shadow Back -->
     <path d="M 320,295 C 370,320 630,320 680,295 L 670,270 C 620,295 380,295 330,270 Z" fill="#684a1a" />
 
-    <!-- Main Crown Body -->
+    <!-- Main Golden Crown Body -->
     <path d="M 335,275 
              C 330,225 350,195 375,185
              C 395,177 420,205 440,170
@@ -69,10 +69,10 @@
              C 580,205 605,177 625,185
              C 650,195 670,225 665,275
              C 610,310 390,310 335,275 Z" 
-          fill="url(#darkCrown)" stroke="url(#goldLinear)" stroke-width="4" stroke-linejoin="round" />
+          fill="url(#goldenBody)" stroke="url(#goldLinear)" stroke-width="4" stroke-linejoin="round" />
 
-    <!-- Crown Filigree -->
-    <g fill="none" stroke="url(#goldLinear)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Crown Filigree Details -->
+    <g fill="none" stroke="#523d18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6">
       <path d="M 375,265 C 360,240 370,200 395,190 C 405,186 420,210 435,195 C 445,185 435,165 420,175" />
       <path d="M 390,220 C 405,225 415,245 405,260" />
       <path d="M 350,260 C 370,250 380,270 365,285" />
@@ -85,8 +85,6 @@
       <path d="M 460,265 C 475,250 490,255 500,270 C 510,255 525,250 540,265" />
       
       <path d="M 465,190 C 480,210 490,195 500,175 C 510,195 520,210 535,190" />
-      <path d="M 445,210 C 465,220 480,200 485,185" />
-      <path d="M 555,210 C 535,220 520,200 515,185" />
     </g>
 
     <!-- Jewels -->
@@ -99,7 +97,7 @@
 
     <!-- Lower Band -->
     <path d="M 335,275 C 385,305 615,305 665,275 C 620,315 380,315 335,275 Z" fill="url(#goldLinear)" />
-    <path d="M 342,283 C 388,311 612,311 658,283 C 615,319 385,319 342,283 Z" fill="#14100A" stroke="url(#goldLinear)" stroke-width="1.5" />
+    <path d="M 342,283 C 388,311 612,311 658,283 C 615,319 385,319 342,283 Z" fill="#2A2215" stroke="url(#goldLinear)" stroke-width="1.5" />
 
     <!-- Band Patterns -->
     <g transform="translate(0, 296) scale(0.75)">
@@ -119,13 +117,13 @@
   </g>
 
   <!-- RIGHT: BIGGER FONT TYPOGRAPHY SECTION -->
-  <g transform="translate(260, 0)">
+  <g transform="translate(315, 0)">
     
-    <!-- Main Title: ASTROCELEBRITY (Much Bigger & Bold Black) -->
+    <!-- Main Title: ASTROCELEBRITY (Larger font size) -->
     <g filter="url(#shadow)">
-      <text x="0" y="92" 
+      <text x="0" y="94" 
             font-family="Georgia, 'Times New Roman', serif" 
-            font-size="42" 
+            font-size="44" 
             font-weight="bold" 
             letter-spacing="5" 
             fill="#111111">
@@ -134,16 +132,16 @@
     </g>
 
     <!-- Subtitle Divider / Ornament Line -->
-    <g transform="translate(205, 120)">
+    <g transform="translate(205, 122)">
       <line x1="-195" y1="0" x2="-12" y2="0" stroke="#111111" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
       <line x1="12" y1="0" x2="195" y2="0" stroke="#111111" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
       <!-- Diamond bullet -->
       <polygon points="0,-3 3,0 0,3 -3,0" fill="#111111" />
     </g>
 
-    <!-- Subtitle: COSMIC FAME • CELESTIAL STYLE (Larger & Clearer) -->
+    <!-- Subtitle: COSMIC FAME • CELESTIAL STYLE (Bigger and refined) -->
     <g filter="url(#shadow)">
-      <text x="205" y="152" 
+      <text x="205" y="154" 
             font-family="Georgia, 'Times New Roman', serif" 
             font-size="16" 
             font-weight="600" 
