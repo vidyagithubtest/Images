@@ -1,157 +1,151 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%" height="100%">
   <defs>
-    <!-- Background Gradient Matching Header -->
-    <linearGradient id="headerBg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#fdf3d0" />
-      <stop offset="50%" stop-color="#faecc5" />
-      <stop offset="100%" stop-color="#f5e1b4" />
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff8dc" />
+      <stop offset="50%" stop-color="#faedcd" />
+      <stop offset="100%" stop-color="#fefae0" />
     </linearGradient>
 
-    <!-- Rich Golden Gradients for Crown -->
-    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFF4CC" />
-      <stop offset="25%" stop-color="#EED48F" />
-      <stop offset="50%" stop-color="#C59B47" />
-      <stop offset="75%" stop-color="#EAD796" />
-      <stop offset="100%" stop-color="#9E742C" />
+    <!-- Rich 3D Gold Gradient -->
+    <linearGradient id="gold3D" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff4cc" />
+      <stop offset="25%" stop-color="#eacda3" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="75%" stop-color="#aa771c" />
+      <stop offset="100%" stop-color="#654321" />
     </linearGradient>
 
-    <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="50%" stop-color="#E9D188" />
-      <stop offset="100%" stop-color="#9C732A" />
+    <!-- Shiny Gold Highlights -->
+    <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#ffd700" />
+      <stop offset="70%" stop-color="#daa520" />
+      <stop offset="100%" stop-color="#8b6508" />
     </linearGradient>
 
-    <linearGradient id="goldenBody" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FCEAB7" />
-      <stop offset="40%" stop-color="#D4AF37" />
-      <stop offset="80%" stop-color="#9A7B26" />
-      <stop offset="100%" stop-color="#6E5317" />
-    </linearGradient>
-
-    <!-- Drop Shadow for Depth -->
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#3d2a09" flood-opacity="0.3"/>
+    <!-- Drop Shadows for 3D Relief -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#3b2204" flood-opacity="0.45"/>
     </filter>
-    
+
     <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feGaussianBlur stdDeviation="6" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
 
-    <!-- Star Symbol -->
-    <g id="star">
-      <path d="M0,-8 L2.2,-2.2 L8,0 L2.2,2.2 L0,8 L-2.2,2.2 L-8,0 L-2.2,-2.2 Z" fill="url(#goldLight)" />
-    </g>
-
-    <!-- Crescent Symbol -->
-    <g id="crescent">
-      <path d="M0,-5 A4,4 0 0,1 0,5 A5.5,5.5 0 0,0 0,-5" fill="url(#goldLight)" />
+    <!-- Star Symbol Definition -->
+    <g id="miniStar">
+      <path d="M0,-10 L2.8,-3.1 L10,-2.5 L4.5,2.4 L6.2,9.5 L0,5.8 L-6.2,9.5 L-4.5,2.4 L-10,-2.5 L-2.8,-3.1 Z" fill="url(#goldShine)" />
     </g>
   </defs>
 
   <!-- Background -->
-  <rect width="1000" height="200" fill="url(#headerBg)" />
+  <rect width="1000" height="450" fill="url(#bgGrad)" />
 
-  <!-- ==================== HORIZONTAL LOGO LAYOUT ==================== -->
-  
-  <!-- LEFT: Golden Crown Emblem (Shifted further left to create generous space) -->
-  <g transform="translate(45, 8) scale(0.48)" filter="url(#shadow)">
-    <!-- Crown Base Shadow Back -->
-    <path d="M 320,295 C 370,320 630,320 680,295 L 670,270 C 620,295 380,295 330,270 Z" fill="#684a1a" />
-
-    <!-- Main Golden Crown Body -->
-    <path d="M 335,275 
-             C 330,225 350,195 375,185
-             C 395,177 420,205 440,170
-             C 455,145 475,100 500,95
-             C 525,100 545,145 560,170
-             C 580,205 605,177 625,185
-             C 650,195 670,225 665,275
-             C 610,310 390,310 335,275 Z" 
-          fill="url(#goldenBody)" stroke="url(#goldLinear)" stroke-width="4" stroke-linejoin="round" />
-
-    <!-- Crown Filigree Details -->
-    <g fill="none" stroke="#523d18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6">
-      <path d="M 375,265 C 360,240 370,200 395,190 C 405,186 420,210 435,195 C 445,185 435,165 420,175" />
-      <path d="M 390,220 C 405,225 415,245 405,260" />
-      <path d="M 350,260 C 370,250 380,270 365,285" />
-      
-      <path d="M 625,265 C 640,240 630,200 605,190 C 595,186 580,210 565,195 C 555,185 565,165 580,175" />
-      <path d="M 610,220 C 595,225 585,245 595,260" />
-      <path d="M 650,260 C 630,250 620,270 635,285" />
-
-      <path d="M 450,250 C 465,230 485,230 500,245 C 515,230 535,230 550,250" />
-      <path d="M 460,265 C 475,250 490,255 500,270 C 510,255 525,250 540,265" />
-      
-      <path d="M 465,190 C 480,210 490,195 500,175 C 510,195 520,210 535,190" />
-    </g>
-
-    <!-- Jewels -->
-    <g stroke="url(#goldLinear)" stroke-width="1.5">
-      <polygon points="500,218 508,228 500,238 492,228" fill="#eef6fc" />
-      <polygon points="500,221 505,228 500,235 495,228" fill="#5890cc" />
-      <polygon points="435,232 441,239 435,246 429,239" fill="#2d6bb5" />
-      <polygon points="565,232 571,239 565,246 559,239" fill="#2d6bb5" />
-    </g>
-
-    <!-- Lower Band -->
-    <path d="M 335,275 C 385,305 615,305 665,275 C 620,315 380,315 335,275 Z" fill="url(#goldLinear)" />
-    <path d="M 342,283 C 388,311 612,311 658,283 C 615,319 385,319 342,283 Z" fill="#2A2215" stroke="url(#goldLinear)" stroke-width="1.5" />
-
-    <!-- Band Patterns -->
-    <g transform="translate(0, 296) scale(0.75)">
-      <use href="#star" x="480" y="0" />
-      <use href="#crescent" x="525" y="0" />
-      <use href="#star" x="570" y="0" />
-      <use href="#crescent" x="615" y="0" />
-      <use href="#star" x="435" y="0" />
-      <use href="#crescent" x="390" y="0" />
-    </g>
-
-    <!-- Center Top Star -->
-    <g transform="translate(500, 85)">
-      <circle cx="0" cy="0" r="18" fill="#ffea9f" opacity="0.6" filter="url(#glow)" />
-      <path d="M0,-22 L5.5,-5.5 L22,0 L5.5,5.5 L0,22 L-5.5,5.5 L-22,0 L-5.5,-5.5 Z" fill="url(#goldLight)" stroke="#fff" stroke-width="1" />
-    </g>
-  </g>
-
-  <!-- RIGHT: BIGGER FONT TYPOGRAPHY SECTION -->
-  <g transform="translate(315, 0)">
+  <!-- ==================== CROWN & HAND EMBLEM ==================== -->
+  <g transform="translate(500, 105) scale(1.15)" filter="url(#dropShadow)">
     
-    <!-- Main Title: ASTROCELEBRITY (Larger font size) -->
-    <g filter="url(#shadow)">
-      <text x="0" y="94" 
-            font-family="Georgia, 'Times New Roman', serif" 
-            font-size="44" 
-            font-weight="bold" 
-            letter-spacing="5" 
-            fill="#111111">
-        ASTROCELEBRITY
-      </text>
+    <!-- Glow behind top star -->
+    <circle cx="0" cy="-68" r="22" fill="#ffea9f" opacity="0.6" filter="url(#glow)" />
+
+    <!-- Crown Base / Headband -->
+    <path d="M -85,15 C -40,32 40,32 85,15 C 80,38 -80,38 -85,15 Z" fill="url(#gold3D)" stroke="#fff" stroke-width="0.8" />
+    <path d="M -82,22 C -40,38 40,38 82,22 C 40,30 -40,30 -82,22 Z" fill="#422405" />
+
+    <!-- Crown Main Points -->
+    <path d="M -78,16 
+             C -85,-10 -65,-30 -55,-45 
+             C -40,-20 -20,-35 0,-55 
+             C 20,-35 40,-20 55,-45 
+             C 65,-30 85,-10 78,16
+             Z" 
+          fill="url(#gold3D)" stroke="url(#goldShine)" stroke-width="1.5" stroke-linejoin="round" />
+
+    <!-- Crown Inner Shading / Ridges -->
+    <path d="M 0,-55 L -10,-10 L 0,22 L 10,-10 Z" fill="#8c6218" opacity="0.4" />
+    <path d="M -55,-45 L -45,-15 L -78,16 Z" fill="#654321" opacity="0.3" />
+    <path d="M 55,-45 L 45,-15 L 78,16 Z" fill="#fff" opacity="0.2" />
+
+    <!-- Crown Spheres on Tips -->
+    <circle cx="-78" cy="16" r="4.5" fill="url(#goldShine)" />
+    <circle cx="-55" cy="-45" r="5" fill="url(#goldShine)" />
+    <circle cx="0" cy="-55" r="6" fill="url(#goldShine)" />
+    <circle cx="55" cy="-45" r="5" fill="url(#goldShine)" />
+    <circle cx="78" cy="16" r="4.5" fill="url(#goldShine)" />
+
+    <!-- Top Star -->
+    <g transform="translate(0, -68)">
+      <path d="M0,-14 L3.8,-4.2 L14,-3.4 L6.2,3.3 L8.5,13 L0,7.8 L-8.5,13 L-6.2,3.3 L-14,-3.4 L-3.8,-4.2 Z" fill="url(#goldShine)" stroke="#fff" stroke-width="0.8" />
     </g>
 
-    <!-- Subtitle Divider / Ornament Line -->
-    <g transform="translate(205, 122)">
-      <line x1="-195" y1="0" x2="-12" y2="0" stroke="#111111" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-      <line x1="12" y1="0" x2="195" y2="0" stroke="#111111" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
-      <!-- Diamond bullet -->
-      <polygon points="0,-3 3,0 0,3 -3,0" fill="#111111" />
-    </g>
-
-    <!-- Subtitle: COSMIC FAME • CELESTIAL STYLE (Bigger and refined) -->
-    <g filter="url(#shadow)">
-      <text x="205" y="154" 
-            font-family="Georgia, 'Times New Roman', serif" 
-            font-size="16" 
-            font-weight="600" 
-            letter-spacing="4" 
-            text-anchor="middle" 
-            fill="#111111"
-            opacity="0.95">
-        COSMIC FAME &#8226; CELESTIAL STYLE
-      </text>
+    <!-- Mystical Hand Emerging from Crown Base (over 'e') -->
+    <g transform="translate(0, 18)">
+      <!-- Palm Base -->
+      <rect x="-16" y="0" width="32" height="32" rx="4" fill="url(#gold3D)" stroke="#fff" stroke-width="1" />
+      
+      <!-- Fingers (vertical mystic bars) -->
+      <rect x="-14" y="-28" width="4.5" height="32" rx="2.2" fill="url(#goldShine)" stroke="#654321" stroke-width="0.6" />
+      <rect x="-7" y="-36" width="4.5" height="40" rx="2.2" fill="url(#goldShine)" stroke="#654321" stroke-width="0.6" />
+      <rect x="0" y="-40" width="4.5" height="44" rx="2.2" fill="url(#goldShine)" stroke="#654321" stroke-width="0.6" />
+      <rect x="7" y="-36" width="4.5" height="40" rx="2.2" fill="url(#goldShine)" stroke="#654321" stroke-width="0.6" />
+      <rect x="14" y="-28" width="4.5" height="32" rx="2.2" fill="url(#goldShine)" stroke="#654321" stroke-width="0.6" />
+      
+      <!-- Glow light between fingers -->
+      <ellipse cx="0" cy="-10" rx="12" ry="8" fill="#ffea9f" opacity="0.4" filter="url(#glow)" />
     </g>
   </g>
+
+
+  <!-- ==================== MAIN TYPOGRAPHY: ASTROCELEBRITY ==================== -->
+  <!-- We use high-end 3D layered text styling matching the reference image closely -->
+  <g transform="translate(500, 275)" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="96" filter="url(#dropShadow)">
+    
+    <!-- Back Outer Gold Stroke Layer (3D Extrusion Effect) -->
+    <text x="0" y="0" letter-spacing="3" fill="url(#gold3D)" stroke="#4a2e0a" stroke-width="8" stroke-linejoin="round">astrocelebrity</text>
+
+    <!-- Middle Dark Inner Core -->
+    <text x="0" y="0" letter-spacing="3" fill="#18120b" stroke="#18120b" stroke-width="3">astrocelebrity</text>
+
+    <!-- Top Highlight Gold Stroke & Gleam -->
+    <text x="0" y="0" letter-spacing="3" fill="none" stroke="url(#goldShine)" stroke-width="2.5" stroke-linejoin="round">astrocelebrity</text>
+
+  </g>
+
+  <!-- Special touch: Star on top of the trailing 'y' -->
+  <g transform="translate(830, 215)">
+    <use href="#miniStar" transform="scale(1.4)" filter="url(#dropShadow)" />
+  </g>
+
+
+  <!-- ==================== SUBTITLE & DECORATIVE LINES ==================== -->
+  <g transform="translate(500, 360)">
+    <!-- Left Decorative Line with Accent Star -->
+    <line x1="-420" y1="0" x2="-230" y2="0" stroke="url(#gold3D)" stroke-width="2.5" stroke-linecap="round" />
+    <circle cx="-425" cy="0" r="3" fill="url(#goldShine)" />
+
+    <!-- Right Decorative Line with Accent Star -->
+    <line x1="230" y1="0" x2="420" y2="0" stroke="url(#gold3D)" stroke-width="2.5" stroke-linecap="round" />
+    <circle cx="425" cy="0" r="3" fill="url(#goldShine)" />
+
+    <!-- Subtitle Text -->
+    <text x="0" y="8" 
+          font-family="Georgia, 'Times New Roman', serif" 
+          font-size="28" 
+          font-weight="600" 
+          letter-spacing="3.5" 
+          text-anchor="middle" 
+          fill="url(#gold3D)" 
+          filter="url(#dropShadow)">
+      cosmic guidance and star insights
+    </text>
+  </g>
+
+  <!-- Ambient background magical stars -->
+  <use href="#miniStar" x="120" y="100" transform="scale(0.8)" opacity="0.7" />
+  <use href="#miniStar" x="880" y="120" transform="scale(0.6)" opacity="0.6" />
+  <use href="#miniStar" x="200" y="400" transform="scale(0.5)" opacity="0.5" />
+  <use href="#miniStar" x="800" y="390" transform="scale(0.7)" opacity="0.6" />
+  <use href="#miniStar" x="500" y="420" transform="scale(0.4)" opacity="0.4" />
 
 </svg>
